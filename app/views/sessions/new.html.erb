@@ -1,0 +1,14 @@
+<% if flash[:error] -%>
+
+ <%= flash[:error] %>
+
+<% end -%>
+<% form_tag(session_url) do |f| -%>
+
+ <label for="openid_url" >
+   OpenID URL:
+ </label>
+ <%= text_field_tag :openid_url -%>
+ <%= submit_tag "Login" -%>
+
+<% end -%> 

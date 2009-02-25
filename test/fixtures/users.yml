@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nickname: MyString
+  email: MyString
+  claimed_url: MyString
+  fullname: MyString
+  birth_date: MyString
+  gender: 1
+  postcode: MyString
+  country: 
+  language: MyString
+  timezone: MyString
+
+two:
+  nickname: MyString
+  email: MyString
+  claimed_url: MyString
+  fullname: MyString
+  birth_date: MyString
+  gender: 1
+  postcode: MyString
+  country: 
+  language: MyString
+  timezone: MyString

@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  include ApplicationHelper
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -11,5 +12,21 @@ class ApplicationController < ActionController::Base
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+
+  private
+  def block_until_authorized
+    return if login?
+    flash[:notice] = "Please login"
+    source = request.referer || "/"
+    redirect_to(source)
+  end
+
+  def got_through_auttorized
+    return if login?
+    flash[:notice] = "Please login"
+    session[:jumpto] = request.parameters
+    redirect_to("/login")
+  end
+
 end
