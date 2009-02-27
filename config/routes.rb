@@ -37,7 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   map.open_id_complete 'session', :controller => 'sessions', :action => 'create', :requirements => { :method => :get }
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destory'
-  map.root :controller => 'blogs'
+  map.root :controller => 'front'
 
   map.resource :session
   map.resources :blogs
