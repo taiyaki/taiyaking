@@ -1,1 +1,7 @@
-<p>Hello</p>
+<%=  link_to_if(login?, "New", new_blog_path) %><br />
+
+<% @blogs.each do |blog| -%>
+<h3><%= h blog.title %></h3>
+<p><%= blog.entry %></p>
+<p><%= blog.user.nickname %></p>
+<% end -%>
