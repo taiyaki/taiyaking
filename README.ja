@@ -1,19 +1,4 @@
-== What is it?
-
-Taiyaking is a Taiyaki CMS on taiyaki.ru.
-
-== Copyright
-
-The taiyaki.ru group (The Taiyaki Bu?)
-
-== License
-
-AGPLv3 excepted the following softwares:
-
-* public_html/javascripts/ except aplication.js (i.e. Prototype Javascript framework): MIT license. See http://www.prototypejs.org/.
-* vendor/rails/: MIT license.
-* vendor/plugins/open_id_authentication/: MIT license.
-= README
+= README.ja
 
 == 名前
 
