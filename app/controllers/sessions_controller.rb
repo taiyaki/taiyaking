@@ -17,7 +17,8 @@ class SessionsController < ApplicationController
   }
 
   def new
-    #    redirect_to default_page
+    #redirect_to default_page
+    session[:jumpto] = request.referer || "/"
   end
 
   def create
@@ -30,7 +31,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    reset_session
     redirect_to default_page
   end
 

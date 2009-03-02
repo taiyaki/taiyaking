@@ -36,7 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
   map.open_id_complete 'session', :controller => 'sessions', :action => 'create', :requirements => { :method => :get }
   map.login '/login', :controller => 'sessions', :action => 'new'
-  map.logout '/logout', :controller => 'sessions', :action => 'destory'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.root :controller => 'front'
 
   map.resource :session

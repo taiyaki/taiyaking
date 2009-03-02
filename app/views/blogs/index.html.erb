@@ -1,3 +1,8 @@
-<%=  link_to_if(login?, "New", new_blog_path) %><br />
+<% content_for(:sub_menus) do -%>
+  <h3>blog menu</h3>
+  <ul>
+    <li><%=  link_to_if(login?, "New", new_blog_path) %></li>
+  </ul>
+<% end %>
 
 <%= render :partial => 'entry', :collection => @blogs %>

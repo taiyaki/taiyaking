@@ -10,6 +10,9 @@
     <h1>たいやきる？</h1>
     <%= yield %>
   </div></div>
+  <div class="adminmenu">
+    <%= render :partial => "shared/loginmenu" %>
+  </div>
   <div id="sidebar" class="sub">
     <h3>menu</h3>
     <ul>
@@ -17,11 +20,14 @@
       <li>tour</li>
       <li>database</li>
       <li>resource</li>
+      <%= yield :sub_menus %>
     </ul>
   </div>
   <div class="footer">
-    <p>Powered by <a href="http://github.com/taiyaki/taiyaking/tree/master">Taiyaking.</a></p>
-    <p>Funded by <a href="http://everyleaf.com">Everylef Corp.</a></p>
+    <p>
+      Powered by <a href="http://github.com/taiyaki/taiyaking/tree/master">Taiyaking.</a><br />
+      Funded by <a href="http://everyleaf.com">Everyleaf Corp.</a><br />
+    </p>
   </div>
   </body>
 </html>

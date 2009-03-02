@@ -1,0 +1,6 @@
+<% if login? %>
+  Login as <%= h logined_user.nickname %> <%= link_to "logout", "/logout" %>
+<% else %>
+  <%= link_to "login", "/login" %>
+<% end %>
+

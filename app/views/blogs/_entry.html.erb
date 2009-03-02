@@ -1,10 +1,10 @@
 <div class="day">
 <span class="date"><%= entry.updated_at %></span>
 <div class="section">
-<h3><%= entry.title %></h3>
+<h3><%= h entry.title %></h3>
 <%= entry.entry %>
 <div class="footnote">
-author: <%= entry.user.nickname %> permlink<br />
+posted at <%= entry.updated_at %> by <%= entry.user.nickname %> permlink<br />
 </div>
 </div></div>
 
