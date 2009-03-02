@@ -19,7 +19,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    @blog = params[:slug] ? Blog.find_by_slug(params[:slug]) : Blog.find(params[:id])
+    redirect_to blogs_path unless @blog
   end
 
   def edit

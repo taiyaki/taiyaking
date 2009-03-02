@@ -1,10 +1,10 @@
 <div class="day">
-<span class="date"><%= entry.updated_at %></span>
+<h2><span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
 <div class="section">
-<h3><%= h entry.title %></h3>
+<h3><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %></h3>
 <%= entry.entry %>
 <div class="footnote">
-posted at <%= entry.updated_at %> by <%= entry.user.nickname %> permlink<br />
+Posted at <%= entry.updated_at %> by <%= entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %><br />
 </div>
 </div></div>
 

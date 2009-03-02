@@ -40,7 +40,12 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'front'
 
   map.resource :session
+  map.permlink_blog 'blogs/:slug',
+    :controller => 'blogs',
+    :action => 'show',
+    :slug => /\D[0-9A-Za-z_-]+/
   map.resources :blogs
+
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
