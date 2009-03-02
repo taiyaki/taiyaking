@@ -1,11 +1,13 @@
-<% content_for(:sub_menus) do -%>
+<% unless controller.action_name == "index"
+ content_for(:sub_menus) do -%>
   <h3>blog menu</h3>
   <ul>
     <li><%=  link_to_if(login?, "New", new_blog_path) %></li>
     <li><%=  link_to_if(login?, "Edit", edit_blog_path(entry)) %></li>
     <li><%=  link_to_if(login?, "Delete", blog_path(entry), :method => :delete) %></li>
   </ul>
-<% end %>
+<% end
+end %>
 
 <div class="day">
 <h2><span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
