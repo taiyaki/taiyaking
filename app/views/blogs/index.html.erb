@@ -3,6 +3,6 @@
   <ul>
     <li><%=  link_to_if(login?, "New", new_blog_path) %></li>
   </ul>
-<% end %>
-
+<% end -%>
+<h2>たいやきBlog</h2>
 <%= render :partial => 'entry', :collection => @blogs %>

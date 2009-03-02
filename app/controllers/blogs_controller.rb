@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 5)
+    @title = "Blog - たいやきる？"
   end
 
   def new
