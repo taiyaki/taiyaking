@@ -1,0 +1,233 @@
+/*
+color_bgcolor#FFFFFF;
+color_text#878787;
+color_link#191CA0;
+color_theme_bgcolor#59B0E9;
+color_theme_text#FFFFFF;
+color_section_bgcolor#FFFFFF;
+color_section_text#878787;
+color_quote#545194;
+color_quote_text#495F48;
+color_comment_bgcolor#CAF3F0;
+color_comment_text#878787;
+color_comment_form_bgcolor#CAF3F0;
+color_comment_form_text#878787;
+size_section_text#1.1;
+*/
+
+body {
+  background: #FFFFFF;
+  color: #878787;
+  margin: 0 30px;
+}
+a {
+  text-decoration: none;
+  color: #191CA0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+h4, h5, h6 {
+  border: solid #59B0E9;
+  padding: 0 0 5px 5px;
+  margin: 10px 0 3px 0;
+}
+h3 {
+  border: double #59B0E9;
+  border-width: 0 0 3px 0;
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 120%;
+}
+h4 {
+  border-width: 0 0 0 10px;
+}
+h5 {
+  border-width: 0 0 0 8px;
+}
+h6 {
+  border-width: 0 0 0 6px;
+}
+h1 {
+  font-size: 140%;
+  font-family: "Arial Black";
+  color: #59B0E9;
+}
+h1 a {
+  color: #59B0E9;
+}
+div.day {
+}
+div.day h2 {
+  background: #59B0E9;
+  padding: 4px;
+  color: #FFFFFF;
+}
+div.day h2 a {
+  color: #FFFFFF;
+}
+div.day h2 span.date {
+  font-style: italic;
+  text-decoration: underline;
+}
+div.day h2 span.title {
+  margin: 0 0 0 10px;
+}
+
+div.day div.body {
+  border: #59B0E9 solid 2px;
+  background: #FFFFFF;
+  color: #878787;
+  font-size: 1.1em;
+}
+div.day div.body div.section {
+  margin: 0 0 30px 0;
+  padding: 5px 15px;
+}
+div.day div.body div.section p {
+  text-indent: 1em;
+}
+div.day div.body div.section blockquote {
+  margin: 15px 0 5px 0.5em;
+  padding: 0 0 0 5px;
+  border: solid #545194;
+  border-width: 0 0 0 2px;
+  color: #495F48;
+}
+div.day div.body div.section blockquote p {
+  text-indent: 0;
+  margin: 0;
+}
+
+div.day div.body div.section pre {
+  font-family: monospace;
+  color: #000;
+  background: #eee;
+  border: solid #888;
+  border-width: 1px;
+  margin: 5px;
+  padding: 5px;
+  overflow: auto;
+  white-space: pre;
+}
+
+div.day div.body div.section table th {
+  padding: 4px;
+  font-weight: bold;
+}
+div.day div.body div.section table td {
+  padding: 4px;
+}
+
+div.comment, div.form {
+  margin: 20px 20px 20px 30px;
+}
+
+div.comment div.commentator {
+  background: #CAF3F0;
+  color: #878787;
+  padding: 4px;
+}
+a span.canchor, a span.sanchor {
+  padding: 0 6px;
+  color: #878787;
+}
+
+div.caption {
+  color: #59B0E9;
+  border: solid #59B0E9;
+  border-width: 0 0 1px 0;
+  padding: 0 0 3px 6px;
+  margin: 0 0 20px 0;
+}
+div.caption a {
+  color: #59B0E9;
+}
+hr.sep {
+  display: none;
+}
+
+div.form form {
+  border: solid #888;
+  border-width: 1px;
+  background: #CAF3F0;
+  padding: 5px;
+  color: #878787;
+}
+div.field {
+  float: left;
+  padding: 0 0 0 10px;
+}
+div.field input {
+  margin: 0 0 0 5px;
+}
+div.name input.field {
+  width: 60px;
+}
+div.mail input.field {
+  width: 150px;
+}
+div.textarea {
+  clear: left;
+  margin: 5px;
+}
+div.textarea textarea {
+  display: block;
+  width: 100%;
+}
+div.footer {
+  font-size: 8pt;
+  text-align: right;
+  clear: both;
+}
+
+/* Side menu */
+div#adjuster {
+  float: left;
+  width: 100%;
+  margin-left: -305px;
+}
+
+div#adjuster div.main {
+  margin-left: 305px;
+}
+
+div.sub {
+  float: right;
+  width: 300px;
+}
+
+/* Plugin navi */
+div.adminmenu {
+  text-align: right;
+}
+div.adminmenu span.adminmenu a {
+  margin: 1px;
+  padding: 4px;
+  font-size: 8pt;
+}
+
+/* Plugin calendar */
+div.calendar {
+  margin: 6px 0;
+}
+div.year a {
+  padding: 0 3px;
+  font-size: 90%;
+}
+
+/* Plugin footnote */
+div.footnote {
+  border: solid #59B0E9;
+  border-width: 1px 0 0 0;
+  padding: 3px;
+  margin: 0 0 0 10px;
+}
+span.footnote { font-size: 9pt; }
+p.footnote {
+  font-size: 9pt;
+  margin: 0;
+}
+p.footnote a { font-size: 10pt; }
