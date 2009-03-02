@@ -21,6 +21,7 @@ class BlogsController < ApplicationController
   def show
     @blog = params[:slug] ? Blog.find_by_slug(params[:slug]) : Blog.find(params[:id])
     redirect_to blogs_path unless @blog
+    @title = @blog.title + " - たいやきる？"
   end
 
   def edit

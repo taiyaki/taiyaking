@@ -43,7 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   map.permlink_blog 'blogs/:slug',
     :controller => 'blogs',
     :action => 'show',
-    :slug => /\D[0-9A-Za-z_-]+/
+    :slug => /(?!new)\D[0-9A-Za-z_-]+/
   map.resources :blogs
 
 
