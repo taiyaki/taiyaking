@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <%= h(@title) if @title -%>
+    <%= stylesheet_link_tag "blue/blue" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"%>
+  </head>
+  <body>
+  <div id="adjuster"><div class="main">
+    <h1>たいやきる？</h1>
+    <%= yield %>
+  </div></div>
+  <div id="sidebar" class="sub">
+    <h3>menu</h3>
+    <ul>
+      <li><%= link_to "blog", :controller => :blogs, :action => "index" %></li>
+      <li>tour</li>
+      <li>database</li>
+      <li>resource</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <p>Powered by <a href="http://github.com/taiyaki/taiyaking/tree/master">Taiyaking.</a></p>
+    <p>Funded by <a href="http://everyleaf.com">Everylef Corp.</a></p>
+  </div>
+  </body>
+</html>
+
