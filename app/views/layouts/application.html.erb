@@ -8,7 +8,12 @@
   <body>
   <div id="adjuster"><div class="main">
     <h1>たいやきる？</h1>
-    <%= yield %>
+    <p>たいやきとあんなことやこんなことを</p>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield %>
+
   </div></div>
   <div class="adminmenu">
     <%= render :partial => "shared/loginmenu" %>
