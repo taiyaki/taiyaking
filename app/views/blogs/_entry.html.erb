@@ -10,9 +10,8 @@
 end %>
 
 <div class="day">
-<h2><span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
+<h2><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %> <span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
 <div class="section">
-<h3><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %></h3>
 <%= BlueFeather.parse(entry.entry) %>
 <div class="footnote">
 Posted at <%= entry.updated_at %> by <%=h entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %><br />

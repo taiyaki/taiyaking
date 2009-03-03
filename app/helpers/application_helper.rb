@@ -10,4 +10,8 @@ module ApplicationHelper
     User.find(session[:user_id])
   end
 
+  def strip_html(str)
+    str.sub!(/<[^<>]*>/,"") while /<[^<>]*>/ =~ str
+    str
+  end
 end
