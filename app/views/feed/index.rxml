@@ -1,0 +1,29 @@
+xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
+xml.rss('version' => '2.0',
+        'xmlns:content' => 'http://purl.org/rss/1.0/modules/content/',
+        'xmlns:wfw' => 'http://wellformedweb.org/CommentAPI/',
+        'xmlns:dc' => 'http://purl.org/dc/elements/1.1/') do
+  xml.channel do
+    xml.title "たいやきる？ - たいやき部"
+    xml.link(request.protocol + request.host_with_port + url_for(:rss => nil))
+    xml.description "たいやきとあんなことやこんなことを"
+    xml.language "ja"
+    xml.generator "Taiyaking - http://github.com/taiyaki/taiyaking/tree"
+    xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
+    @recent.each do |item|
+      xml.item do
+        xml.title(item[:title])
+        xml.description do
+          xml.cdata! item[:content]
+        end
+        xml.content :encoded do
+          xml.cdata! item[:content]
+        end
+        xml.link item[:link]
+        xml.guid('isPermLink' => 'false') { xml.text! item[:link] }
+        xml.pubDate item[:date].iso8601
+      end
+    end
+  end
+end
+

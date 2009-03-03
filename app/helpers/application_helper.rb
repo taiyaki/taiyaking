@@ -14,4 +14,19 @@ module ApplicationHelper
     str.sub!(/<[^<>]*>/,"") while /<[^<>]*>/ =~ str
     str
   end
+
+  def recent_blog(blogs)
+    result = []
+    blogs.each do |blog|
+      link = hash_for_permlink_blog_path(:slug => blog.slug)
+      link[:only_path] = false
+      result << {
+        :date => blog.updated_at,
+        :title => blog.title + " - Blog",
+        :link => url_for(link),
+        :content => BlueFeather.parse(blog.entry)
+      }
+    end
+    result
+  end
 end
