@@ -13,9 +13,9 @@ end %>
 <h2><span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
 <div class="section">
 <h3><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %></h3>
-<%= entry.entry %>
+<%= BlueFeather.parse(entry.entry) %>
 <div class="footnote">
-Posted at <%= entry.updated_at %> by <%= entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %><br />
+Posted at <%= entry.updated_at %> by <%=h entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %><br />
 </div>
 </div></div>
 
