@@ -269,6 +269,6 @@ p.footnote a { font-size: 10pt; }
 }
 
 #head {
-  background-image: url(/images/taiyaki-head.jpg);
+  background-image: url(../../images/taiyaki-head.jpg);
   height: 150px;
 }
