@@ -22,9 +22,7 @@ xml.rss('version' => '2.0',
         xml.link item[:link]
         xml.guid('isPermLink' => 'false') { xml.text! item[:link] }
         xml.pubDate item[:date].iso8601
-	xml.dc :creator do
-	  xml.text! item[:author]
-	end
+	xml.dc(:creator) { xml.text! item[:author] }
       end
     end
   end
