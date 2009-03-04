@@ -19,7 +19,8 @@ module ApplicationHelper
         :date => blog.updated_at,
         :title => blog.title + " - Blog",
         :link => url_for(link),
-        :content => BlueFeather.parse(blog.entry)
+        :content => BlueFeather.parse(blog.entry),
+        :author => blog.user.nickname
       }
     end
     result

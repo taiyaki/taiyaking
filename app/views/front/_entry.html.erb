@@ -2,6 +2,9 @@
 <p>
 <%= truncate(strip_tags(entry[:content]), :length => 30) %>
 </p>
+<div class="footnote">
+Posted by <%=h entry[:author] %>
+</div>
 
 
 
