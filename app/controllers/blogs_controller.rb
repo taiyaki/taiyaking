@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 class BlogsController < ApplicationController
   before_filter :block_until_authorized,
     :only => [:new, :edit, :create, :update, :destory]
+  cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
 
   def index
     @blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 5)
