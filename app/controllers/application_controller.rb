@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def block_until_authorized
     return if login?
     flash[:notice] = "Please login"
-    source = request.referer || "/"
+    source = request.referer || root_path
     redirect_to(source)
   end
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     return if login?
     flash[:notice] = "Please login"
     session[:jumpto] = request.parameters
-    redirect_to("/login")
+    redirect_to(login_path)
   end
 
 end

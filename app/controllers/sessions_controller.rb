@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  @@default_page = '/'
-  
   @@required = {
     :nickname => "nickname",
     :email => "email"
@@ -18,7 +16,7 @@ class SessionsController < ApplicationController
 
   def new
     #redirect_to default_page
-    session[:jumpto] = request.referer || "/"
+    session[:jumpto] = request.referer || root_path
   end
 
   def create
@@ -88,7 +86,7 @@ class SessionsController < ApplicationController
   end
 
   def default_page
-    @@default_page
+    root_path
   end
 
   def tyied_page

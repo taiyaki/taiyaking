@@ -1,7 +1,7 @@
+<% unless controller_name == 'front' -%>
 <% if login? -%>
-  <% unless controller_name == 'front' -%>
-  Login as <%= h logined_user.nickname %> <%= link_to "logout",  "/logout" %>
-  <% end -%>
+  Login as <%= h logined_user.nickname %> <%= link_to "logout",  logout_path %>
 <% else -%>
-  <%= link_to "login", "/login" %>
+  <%= link_to "login", login_path %>
+<% end -%>
 <% end -%>
