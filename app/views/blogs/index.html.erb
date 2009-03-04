@@ -5,4 +5,5 @@
   </ul>
 <% end -%>
 <h2>たいやきBlog</h2>
+<%= will_paginate @blogs %>
 <%= render :partial => 'entry', :collection => @blogs %>
