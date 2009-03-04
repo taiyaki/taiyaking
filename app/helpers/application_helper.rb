@@ -10,11 +10,6 @@ module ApplicationHelper
     User.find(session[:user_id])
   end
 
-  def strip_html(str)
-    str.sub!(/<[^<>]*>/,"") while /<[^<>]*>/ =~ str
-    str
-  end
-
   def recent_blog(blogs)
     result = []
     blogs.each do |blog|

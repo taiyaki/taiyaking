@@ -1,6 +1,6 @@
 <h3><%= link_to(entry[:date].strftime("%Y-%m-%d") + " " + h(entry[:title]), entry[:link])%></h3>
 <p>
-<%= truncate(strip_html(entry[:content]), :length => 30) %>
+<%= truncate(strip_tags(entry[:content]), :length => 30) %>
 </p>
 
 
