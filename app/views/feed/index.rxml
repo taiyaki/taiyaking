@@ -9,7 +9,7 @@ xml.rss('version' => '2.0',
     xml.description "たいやきとあんなことやこんなことを"
     xml.language "ja"
     xml.generator "Taiyaking - http://github.com/taiyaki/taiyaking/tree"
-    xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
+    xml.pubDate(Time.now.iso8601)
     @recent.each do |item|
       xml.item do
         xml.title(item[:title])
