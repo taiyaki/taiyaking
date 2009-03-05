@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
     :slug => /(?!new)\D[0-9A-Za-z_-]+/
   map.resources :blogs
 
+  map.feed "/feed.:format", :controller => "feed", :action => "index"
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
