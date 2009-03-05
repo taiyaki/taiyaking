@@ -30,7 +30,7 @@ class FeedController < ApplicationController
     RSS::Maker.make(version) do |maker|
       channel = maker.channel
       channel.title = "たいやきる？ - たいやき部"
-      channel.about = formatted_feed_url(format)
+      channel.about = feed_url(:format => format)
       channel.link = root_url
       channel.description = "たいやきとあんなことやこんなことを"
       channel.language = "ja"
