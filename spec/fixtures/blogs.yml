@@ -2,12 +2,13 @@
 
 one:
   user: tanaka
-  title: MyString
-  entry: MyText
-  slug: MyString
+  title: MyString1
+  entry: MyText1
+  slug: permlink1
 
 two:
   user: suzuki
-  title: MyString
-  entry: MyText
-  slug: MyString
+  title: MyString2
+  entry: MyText2
+  slug: permlink2
+
