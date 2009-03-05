@@ -1,9 +1,8 @@
 <% if flash[:error] -%>
-
- <%= flash[:error] %>
-
+ <p style="color: red"><%= flash[:error] %></p>
 <% end -%>
-<% form_tag(session_url) do |f| -%>
+
+<% form_tag(session_url) do |f| %>
 
  <label for="openid_url" >
    OpenID URL:
