@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   @@optional = {
     :fullname => "fullname",
-    :birth_day => "dob",
+    :birth_date => "dob",
     :gender => "gender",
     :postcode => "postcode",
     :country => "country",
