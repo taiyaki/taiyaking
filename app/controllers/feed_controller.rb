@@ -9,11 +9,9 @@ class FeedController < ApplicationController
     blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 15)
     @recent = recent_blog(blogs)
     respond_to do |format|
-      feed = nil
-      format.rdf {feed = make_feed("rss1.0", "rdf", @recent)}
-      format.rss {feed = make_feed("rss2.0", "rss", @recent)}
-      format.atom {feed = make_feed("atom", "atom", @recent)}
-      render(:text => feed)
+      format.rdf {render(:text => make_feed("rss1.0", "rdf", @recent))}
+      format.rss {render(:text => make_feed("rss2.0", "rss", @recent))}
+      format.atom {render(:text => make_feed("atom", "atom", @recent))}
     end
   end
 
