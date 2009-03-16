@@ -11,7 +11,7 @@ describe SessionsController do
     it "ログアウトできる" do
       delete 'destroy'
       session[:user_id].should be_nil
-#      response.should redirect_to(root_path)
+      response.should redirect_to(root_path)
     end
   end
 end

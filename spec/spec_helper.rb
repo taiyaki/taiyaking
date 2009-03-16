@@ -2,7 +2,7 @@
 # from the project root directory.
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
-require 'spec'
+require 'spec/autorun'
 require 'spec/rails'
 
 Spec::Runner.configure do |config|
@@ -44,4 +44,7 @@ Spec::Runner.configure do |config|
   # == Notes
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
+  def user_login
+    session[:user_id] = users(:tanaka).id
+  end
 end
