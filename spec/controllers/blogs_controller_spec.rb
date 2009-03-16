@@ -5,7 +5,7 @@ describe BlogsController do
 
   describe "ログインしてnewにアクセスすると" do
     before(:each) do
-      session[:user_id] = users(:tanaka).id
+      user_login
       get :new
     end
     it "ブログ新規エントリが表示される" do
@@ -25,7 +25,7 @@ describe BlogsController do
 
   describe "ブログindexにアクセスすると" do
     before do
-      session[:user_id] = users(:tanaka).id
+      user_login
       get :index
     end
     it "ブログ一覧が表示される" do
@@ -54,6 +54,15 @@ describe BlogsController do
         post :create
       end
       it { response.should render_template("blogs/new") }
+    end
+  end
+
+  describe "showにアクセスすると" do
+    before do
+      get :show, :id => blogs(:one)
+    end
+    it "ブログ１件表示される" do
+      response.should be_success
     end
   end
 end

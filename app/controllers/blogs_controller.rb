@@ -29,7 +29,8 @@ class BlogsController < ApplicationController
   def show
     @blog = params[:slug] ? Blog.find_by_slug(params[:slug]) : Blog.find(params[:id])
     unless @blog
-      return render :text => "Page not found", :status => :not_found
+      render :text => "Page not found", :status => :not_found
+      return
     end
     @title = @blog.title + " - たいやきる？"
   end
