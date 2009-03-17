@@ -1,4 +1,17 @@
+<div class="navigation">
+<div class="left">
+<% prev_blog = Blog.find_by_id(@blog.id - 1)
+if prev_blog -%>
+<%= link_to "<< " + prev_blog.title, blog_path(prev_blog) %>
+<% end -%>
+</div>
+
+<div class="right">
+<% next_blog = Blog.find_by_id(@blog.id + 1)
+if next_blog -%>
+<%= link_to next_blog.title + " >>", blog_path(next_blog) %>
+<% end -%>
+</div>
+</div>
+
 <%= render :partial => 'entry', :object => @blog %>
-
-
-

@@ -59,6 +59,7 @@ h1 a {
   color: #59B0E9;
 }
 div.day {
+  clear: both;
 }
 div.day h2 {
   background: #59B0E9;
@@ -272,3 +273,17 @@ p.footnote a { font-size: 10pt; }
   background-image: url(../../images/taiyaki-head.jpg);
   height: 150px;
 }
+
+.navigation {
+}
+
+.navigation .left {
+  float: left;
+  width: 100px;
+}
+
+.navigation .right {
+  float: right;
+  width: 100px;
+}
+
