@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       open_id_authentication
     else
       flash[:error] = "You must provide an OpenID URL"
-      redirect_to tyied_page
+      redirect_to :back
     end
   end
 
@@ -41,7 +41,6 @@ class SessionsController < ApplicationController
       :target_column => "endpoint_url"
     }
     authenticate_with_open_id(params[:openid_url], options) do |result, identity_url, registration|
-      p result
       case result.status
       when :found_in_whitelist_or_blacklist
         failed_login "Sorry, the OpenID server is blocked by the white list"
@@ -80,17 +79,13 @@ class SessionsController < ApplicationController
     #redirect_to(root_url)
   end
 
-  def failed_login
+  def failed_login(message)
     flash[:error] = message
     redirect_to default_page
   end
 
   def default_page
-    root_path
-  end
-
-  def tyied_page
-    request.referer
+    login_path
   end
 
   def assign_registration_attributes!(registration)

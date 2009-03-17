@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
     redirect_to(source)
   end
 
-  def got_through_auttorized
-    return if login?
-    flash[:notice] = "Please login"
-    session[:jumpto] = request.parameters
-    redirect_to(login_path)
-  end
+#   def got_through_authorized
+#     return if login?
+#     flash[:notice] = "Please login"
+#     session[:jumpto] = request.parameters
+#     redirect_to(login_path)
+#   end
 
 end
