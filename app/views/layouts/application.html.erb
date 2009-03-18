@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag "blue/blue" %>
     <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"%>
     <%= auto_discovery_link_tag :rss, {:controller => 'feed', :action => 'index'} %>
+    <%= render "shared/google_analytics" -%>
   </head>
   <body>
   <div id="adjuster"><div class="main">
@@ -33,10 +34,7 @@
     </ul>
   </div>
   <div class="footer">
-    <p>
-      Powered by <a href="http://github.com/taiyaki/taiyaking/tree/master">Taiyaking.</a><br />
-      Founded by <a href="http://everyleaf.com">Everyleaf Corp.</a><br />
-    </p>
+    <%= render "shared/footer" %>
   </div>
   </body>
 </html>

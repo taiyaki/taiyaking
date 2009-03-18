@@ -279,11 +279,11 @@ p.footnote a { font-size: 10pt; }
 
 .navigation .left {
   float: left;
-  width: 100px;
+  width: 200px;
 }
 
 .navigation .right {
   float: right;
-  width: 100px;
+  width: 200px;
 }
 
