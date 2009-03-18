@@ -36,6 +36,10 @@ class BlogsController < ApplicationController
     @title = @blog.title + " - たいやきる？"
   end
 
+  def wordpress_link
+    redirect_to permlink_blog_path(:slug => params[:slug])
+  end
+
   def edit
     @blog = Blog.find(params[:id])
     @blog.user = logined_user

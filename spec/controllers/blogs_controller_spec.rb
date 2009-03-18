@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe BlogsController do
@@ -13,13 +14,27 @@ describe BlogsController do
     end
   end
 
-  describe "ログインしないでnewにアクセスすると" do
+  describe "ログインしないで" do
     before do
       session[:user_id] = nil
-      get :new
     end
-    it "フロントにリダイレクトする" do
-      response.should redirect_to(:controller => 'front', :action => 'index')
+
+    describe "newにアクセスすると" do
+      before do
+        get :new
+      end
+      it "フロントにリダイレクトする" do
+        response.should redirect_to(:controller => 'front', :action => 'index')
+      end
+    end
+
+    describe "wordpress_linkにアクセスすると" do
+      before do
+        get :wordpress_link, :slug => "permlink"
+      end
+      it "permlinkにリダイレクトする" do
+        response.should redirect_to(permlink_blog_path(:slug => "permlink"))
+      end
     end
   end
 

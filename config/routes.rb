@@ -55,5 +55,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
 
   # Wordpress compatibility.
-  map.connect ':year/:month/:date/:slug', :controller => "blogs", :action => "show"
+  map.connect ':year/:month/:date/:slug', :controller => "blogs", :action => "wordpress_link"
 end
