@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe BlogsController do
@@ -109,7 +110,7 @@ describe BlogsController do
       end
       it { response.should redirect_to :action => "index" }
     end
-end
+  end
 
   describe "showにアクセスすると" do
     describe "ブログ1件表示される" do
