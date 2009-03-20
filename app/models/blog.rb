@@ -3,5 +3,5 @@ class Blog < ActiveRecord::Base
 
   validates_presence_of :entry, :slug
   validates_uniqueness_of :slug
-  validates_format_of :slug, :with => /^\D[0-9A-Za-z_-]+/
+  validates_format_of :slug, :with => /\A[a-z][0-9a-z_-]+\Z/i
 end
