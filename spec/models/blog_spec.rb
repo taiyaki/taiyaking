@@ -8,7 +8,7 @@ describe Blog do
       :user_id => 1,
       :title => "value for title",
       :entry => "value for entry",
-      :slug => "value for slug"
+      :slug => "value_for_slug"
     }
   end
 

@@ -1,6 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe FeedController do
+  fixtures :blogs, :users
 
   #Delete these examples and add some real ones
   it "should use FeedController" do

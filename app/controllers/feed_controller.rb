@@ -7,6 +7,10 @@ class FeedController < ApplicationController
 
   def index
     blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 15)
+    if blogs.size < 1
+      render :text => "Page not found", :status => :not_found
+      return
+    end
     @recent = recent_blog(blogs)
     respond_to do |format|
       format.rdf {render(:text => make_feed("rss1.0", "rdf", @recent))}
