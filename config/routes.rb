@@ -45,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
     :action => 'show',
     :slug => /(?!new)\D[0-9A-Za-z_-]+/
   map.resources :blogs
+  map.resources :shops
 
   map.feed "/feed.:format", :controller => "feed", :action => "index"
 

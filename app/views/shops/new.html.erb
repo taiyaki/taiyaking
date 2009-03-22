@@ -1,0 +1,23 @@
+<% content_for(:head) do -%>
+<%= javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{GOOGLE_MAPS_API_KEY}" %>
+<% javascript_tag do -%>
+var map = null;
+var geocoder = new GClientGeocoder();
+function initialize() {
+  map = new GMap2(document.getElementById("map"));
+  map.enableDoubleClickZoom();
+}
+function finalize() {
+  GUnload();
+}
+<% end -%>
+<% end -%>
+
+<h2>たいやき店情報を追加</h2>
+
+<%= error_messages_for :shop %>
+
+<% form_for @shop do |f| %>
+  <%= render :partial => f %>
+  <%= submit_tag 'Create' %>
+<% end %>
