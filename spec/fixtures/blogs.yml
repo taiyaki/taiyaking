@@ -2,13 +2,16 @@
 
 one:
   user: tanaka
-  title: MyString1
+  title: I am tanaka!
   entry: MyText1
   slug: permlink1
+  updated_at: <%= Time.parse("2009-04-07T20:10:30+00:00").utc.iso8601 %>
 
 two:
   user: suzuki
-  title: MyString2
+  title: Are you suzuki?
   entry: MyText2
   slug: permlink2
+  updated_at: <%= Time.parse("2009-04-01T00:11:22+00:00").utc.iso8601 %>
+
 
