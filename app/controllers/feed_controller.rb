@@ -7,7 +7,7 @@ class FeedController < ApplicationController
 
   def index
     blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 15)
-    if blogs.size < 1
+    if blogs.empty?
       render :text => "Page not found", :status => :not_found
       return
     end
