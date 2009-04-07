@@ -48,3 +48,24 @@ Spec::Runner.configure do |config|
     session[:user_id] = users(:tanaka).id
   end
 end
+
+module RackResponseHelpersIntegrateToTestResponse
+  def invalid?;       response_code < 100 || response_code >= 600; end
+
+  def informational?; response_code >= 100 && response_code < 200; end
+  def successful?;    response_code >= 200 && response_code < 300; end
+  def redirection?;   response_code >= 300 && response_code < 400; end
+  def client_error?;  response_code >= 400 && response_code < 500; end
+  def server_error?;  response_code >= 500 && response_code < 600; end
+
+  def ok?;            response_code == 200;                        end
+  def forbidden?;     response_code == 403;                        end
+  def not_found?;     response_code == 404;                        end
+
+  def redirect?;      [301, 302, 303, 307].include? response_code; end
+  def empty?;         [201, 204, 304].include?      response_code; end
+end
+
+class Rack::Response
+  include RackResponseHelpersIntegrateToTestResponse
+end
