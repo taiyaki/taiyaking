@@ -14,5 +14,11 @@ describe FeedController do
       get 'index'
       response.should be_success
     end
+
+    it "should return NOT FOUND when no post exist" do
+      Blog.destroy_all
+      get 'index'
+      response.should be_not_found
+    end
   end
 end
