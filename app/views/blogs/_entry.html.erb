@@ -14,7 +14,7 @@ end %>
 <div class="section">
 <%= BlueFeather.parse(entry.entry) %>
 <div class="footnote">
-Posted at <%= entry.updated_at.localtime %> by <%=h entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %>
+Posted at <%= entry.updated_at.in_time_zone("Tokyo") %> by <%=h entry.user.nickname %> <%= link_to "permlink", permlink_blog_path(:slug => entry.slug) %>
 </div>
 </div></div>
 
