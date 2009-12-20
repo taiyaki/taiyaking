@@ -21,8 +21,9 @@
       </div>
       <div class="menu">
         <ul>
-          <li><%= link_to("ブログ", blogs_path) %></li>
+          <li><%= link_to("たいやき部について", permlink_blog_path("about")) %></li>
           <li><%= link_to("入部案内", permlink_blog_path("how-to-join")) %></li>
+          <li><%= link_to("ブログ", blogs_path) %></li>
         </ul>
       </div>
     </div>
@@ -38,15 +39,7 @@
     <%= render :partial => "shared/loginmenu" %>
   </div>
   <div class="sidebar">
-    <h3>menu</h3>
-    <ul>
-      <li><%= link_to "top", :controller => "front", :action => "index" %></li>
-      <li><%= link_to "blog", :controller => "blogs", :action => "index" %></li>
-      <li>tour</li>
-      <li>database</li>
-      <li>resource</li>
-      <%= yield :sub_menus %>
-    </ul>
+    <%= yield :side_menus %>
   </div>
 
   <div class="footer">
