@@ -124,7 +124,7 @@ div.content
 {
   background-color: white;
   margin-top: 10px;
-  margin-right: 200px;
+  margin-right: 220px;
   margin-bottom: 10px;
   padding-left: 29px;
   border: 1px solid grey;
@@ -179,12 +179,17 @@ div.sidebar
   position: absolute;
   top: 157px;
   right: 0;
-  width: 190px;
+  width: 210px;
   border: 1px solid #caa05d;
   /* background: url(../../images/taiyaki-scale.png); */
   background-color: white;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+}
+
+div.sidebar div.about-taiyaki-bu
+{
+  padding-left: 10px;
 }
 
 div.footer
