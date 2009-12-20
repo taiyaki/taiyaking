@@ -1,0 +1,66 @@
+html,
+body
+{
+  background-color: #caa05d;
+  margin: 0;
+  padding: 0;
+}
+
+div.main
+{
+  background-color: white;
+}
+
+div.header
+{
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+div.title
+{
+  background: white url(../../images/mini-tailavi.png) no-repeat;
+  margin: 0;
+  padding-top: 0px;
+  height: 147px;
+}
+
+div.header div.title a,
+div.header div.title a:link,
+div.header div.title a:visited
+{
+  color: black;
+  text-decoration: none;
+}
+
+div.header div.title span
+{
+  display: block;
+  padding-left: 150px;
+  margin-bottom: 2px;
+}
+
+div.header div.title span.title
+{
+  padding-top: 20px;
+}
+
+div.header div.title span.title img
+{
+  border-width: 0;
+}
+
+div.header div.title span.separator
+{
+  display: none;
+}
+
+div.header div.title span.subtitle
+{
+  font-size: smaller;
+}
+
+div#content
+{
+  padding-left: 2em;
+}

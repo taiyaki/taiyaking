@@ -2,22 +2,33 @@
 <html>
   <head>
     <title><%= h(@title) if @title -%></title>
-    <%= stylesheet_link_tag "blue/blue" %>
+    <%= stylesheet_link_tag "taiyaki/taiyaki" %>
     <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"%>
     <%= auto_discovery_link_tag :rss, {:controller => 'feed', :action => 'index'} %>
   </head>
   <body>
-  <div id="adjuster"><div class="main">
-    <div id="head">
-    <h1><%= link_to "たいやきる？", "/" %></h1>
-    <p>たいやきとあんなことやこんなことを</p>
+  <div class="main">
+    <div class="header">
+      <div class="title">
+        <%= link_to([content_tag("span",
+                                 image_tag("taiyaki-ru.png",
+                                           :alt => "たいやきる？"),
+                                 :class => "title"),
+                     content_tag("span", "-", :class => "separator"),
+                     content_tag("span", "たいやきとあんなことやこんなこと",
+                                 :class => "subtitle")].join("\n"),
+                    "/") %>
+      </div>
     </div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
+    <div id="content">
 <%= yield %>
+    </div>
 
-  </div></div>
+  </div>
+
   <div class="adminmenu">
     <%= render :partial => "shared/loginmenu" %>
   </div>
@@ -35,7 +46,7 @@
   <div class="footer">
     <%= render "shared/footer" %>
   </div>
-    <%= render "shared/google_analytics" -%>
+  <%= render "shared/google_analytics" -%>
   </body>
 </html>
 
