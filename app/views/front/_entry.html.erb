@@ -1,10 +1,9 @@
-<h3><%= link_to(entry[:date].strftime("%Y-%m-%d") + " " + h(entry[:title]), entry[:link])%></h3>
-<p>
-<%= truncate(strip_tags(entry[:content]), :length => 30) %>
-</p>
-<div class="footnote">
-Posted by <%=h entry[:author] %>
+<div class="entry">
+  <h2><%= link_to(entry_link_label(entry), entry[:link])%></h2>
+  <p>
+  <%= truncate(strip_tags(entry[:content]), :length => 30) %>
+  </p>
+  <div class="footnote">
+    <p>Posted by <%=h entry[:author] %></p>
+  </div>
 </div>
-
-
-
