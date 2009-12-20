@@ -126,7 +126,6 @@ div.content
   margin-top: 10px;
   margin-right: 200px;
   margin-bottom: 10px;
-  padding-right: 2em;
   padding-left: 29px;
   border: 1px solid grey;
   -moz-border-radius: 5px;
@@ -142,6 +141,7 @@ div.content div.recent-entries div.entry
 {
   border-bottom: 1px dotted #caa05d;
   margin-bottom: 1em;
+  margin-right: 2em;
 }
 
 div.content div.entry h2 span.date
