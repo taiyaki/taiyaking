@@ -179,7 +179,8 @@ div.sidebar
   right: 0;
   width: 190px;
   border: 1px solid #caa05d;
-  background: url(../../images/taiyaki-scale.png);
+  /* background: url(../../images/taiyaki-scale.png); */
+  background-color: white;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
