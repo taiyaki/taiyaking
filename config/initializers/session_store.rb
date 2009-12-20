@@ -11,7 +11,7 @@ unless File.exist?(session_secret_file)
 end
 session_secret = File.read(session_secret_file).strip
 
-config.action_controller.session = {
+ActionController::Base.session = {
   :session_key => '_taiyaking_session',
   :secret      => session_secret,
 }
@@ -19,4 +19,4 @@ config.action_controller.session = {
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rake db:sessions:create")
-# config.action_controller.session_store = :active_record_store
+# ActionController::Base.session_store = :active_record_store
