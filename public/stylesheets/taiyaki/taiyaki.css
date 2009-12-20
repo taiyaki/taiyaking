@@ -126,6 +126,7 @@ div.content
   margin-top: 10px;
   margin-right: 200px;
   margin-bottom: 10px;
+  padding-right: 2em;
   padding-left: 29px;
   border: 1px solid grey;
   -moz-border-radius: 5px;
@@ -157,13 +158,13 @@ div.content div.entry div.section
 div.content div.entry div.footnote
 {
   text-align: right;
-  padding-right: 10px;
+  padding-right: 1em;
 }
 
 div.content div.entry div.metadata
 {
   text-align: right;
-  padding-right: 10px;
+  padding-right: 1em;
   font-size: smaller;
 }
 
