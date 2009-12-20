@@ -19,11 +19,17 @@
                                  :class => "subtitle")].join("\n"),
                     "/") %>
       </div>
+      <div class="menu">
+        <ul>
+          <li><%= link_to("ブログ", "/blog/") %></li>
+          <li><%= link_to("入部案内", "/blog/") %></li>
+        </ul>
+      </div>
     </div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
-    <div id="content">
+    <div class="content">
 <%= yield %>
     </div>
 

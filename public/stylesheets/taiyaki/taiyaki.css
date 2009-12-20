@@ -13,16 +13,24 @@ div.main
 
 div.header
 {
+  background-color: white;
   padding-top: 5px;
-  padding-left: 5px;
 }
 
-div.title
+div.header div.title
 {
-  background: white url(../../images/mini-tailavi.png) no-repeat;
+  background: white url(../../images/mini-tailavi.png) no-repeat top left;
   margin: 0;
   padding-top: 0px;
-  height: 147px;
+  height: 113px;
+  margin-left: 5px;
+  padding-bottom: 5px;
+}
+
+div.header div.title a
+{
+  display: block;
+  height: 113px;
 }
 
 div.header div.title a,
@@ -60,7 +68,37 @@ div.header div.title span.subtitle
   font-size: smaller;
 }
 
-div#content
+div.header div.menu ul
 {
-  padding-left: 2em;
+  display: block;
+  font-weight: bold;
+  color: white;
+  /* background-color: #98514B; */
+  /* background-color: #946259; */
+  /* background-color: #860600; */
+  background: url(../../images/menu-bar.png) repeat-x;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+div.header div.menu ul a
+div.header div.menu ul a:visited,
+div.header div.menu ul a:link
+{
+  color: white;
+}
+
+div.header div.menu ul li
+{
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div.content
+{
+  padding-left: 30px;
 }
