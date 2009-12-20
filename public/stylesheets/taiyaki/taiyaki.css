@@ -141,7 +141,6 @@ div.content div.recent-entries div.entry
 {
   border-bottom: 1px dotted #caa05d;
   margin-bottom: 1em;
-  margin-right: 2em;
 }
 
 div.content div.entry h2 span.date
@@ -150,9 +149,11 @@ div.content div.entry h2 span.date
   color: grey;
 }
 
+div.content div.entry p.summary,
 div.content div.entry div.section
 {
   padding-left: 1em;
+  padding-right: 2em;
 }
 
 div.content div.entry div.footnote

@@ -1,6 +1,6 @@
 <div class="entry">
   <h2><%= link_to(recent_entry_link_label(entry), entry[:link])%></h2>
-  <p>
+  <p class="summary">
   <%= truncate(strip_tags(entry[:content]), :length => 30) %>
   </p>
   <div class="footnote">
