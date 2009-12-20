@@ -21,8 +21,9 @@
       </div>
       <div class="menu">
         <ul class="main-menu">
-          <li><%= link_to("たいやき部について", permlink_blog_path("about")) %></li>
+          <li>たいやき部について（準備中）</li>
           <li><%= link_to("入部案内", permlink_blog_path("how-to-join")) %></li>
+          <li><%= link_to("活動情報", "http://qwik.jp/taiyaki/") %></li>
           <li><%= link_to("ブログ", blogs_path) %></li>
         </ul>
         <ul class="login-menu">
@@ -47,8 +48,8 @@
 
   <div class="sidebar">
     <div class="about-taiyaki-bu">
-      <p><%= link_to(image_tag("taiyaki-sign.png", :alt => "たいやき部について"),
-                     permlink_blog_path("about")) %>
+      <p><%= link_to(image_tag("taiyaki-sign.png", :alt => "入部案内"),
+                     permlink_blog_path("how-to-join")) %>
     </div>
     <%= yield :side_menus %>
   </div>
