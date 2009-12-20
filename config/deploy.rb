@@ -46,6 +46,12 @@ after "deploy:setup" do
     end
     top.upload(session_secret_file, File.join(config_path, "session_secret.txt"))
   end
+
+  google_analytics_code_txt = "config/google-analytics-code.txt.production"
+  if File.exist?(google_analytics_code_txt)
+    top.upload(google_analytics_code_txt,
+               File.join(config_path, "google-analytics-code.txt"))
+  end
 end
 
 # after "deploy:update_code" do
@@ -61,4 +67,8 @@ after "deploy:finalize_update" do
   run "ln -s #{shared_path}/config/session_secret.txt #{latest_release}/config/"
 
   run "ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/"
+
+  google_analytics_code_txt = "#{shared_path}/config/google-analytics-code.txt"
+  run("[ -f #{google_analytics_code_txt} ] && " +
+      "ln -s #{google_analytics_code_txt} #{latest_release}/config/")
 end
