@@ -1,5 +1,5 @@
 <div class="entry">
-  <h2><%= link_to(entry_link_label(entry), entry[:link])%></h2>
+  <h2><%= link_to(recent_entry_link_label(entry), entry[:link])%></h2>
   <p>
   <%= truncate(strip_tags(entry[:content]), :length => 30) %>
   </p>

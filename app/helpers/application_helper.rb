@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
@@ -24,5 +25,15 @@ module ApplicationHelper
       }
     end
     result
+  end
+
+  def page_title
+    @title ||= nil
+    title = "たいやきる？たいやき部"
+    if @title
+      "#{h(@title)} - #{title}"
+    else
+      title
+    end
   end
 end

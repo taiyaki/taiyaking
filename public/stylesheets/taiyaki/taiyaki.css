@@ -7,6 +7,21 @@ body
   padding: 0;
 }
 
+a
+{
+  color: #caa05d;
+}
+
+a:visited
+{
+  color: #bc9659;
+}
+
+a img
+{
+  border-width: 0;
+}
+
 div.main
 {
 }
@@ -51,11 +66,6 @@ div.header div.title span.title
   padding-top: 20px;
 }
 
-div.header div.title span.title img
-{
-  border-width: 0;
-}
-
 div.header div.title span.separator
 {
   display: none;
@@ -88,9 +98,9 @@ div.header div.menu ul
   padding-bottom: 3px;
 }
 
-div.header div.menu ul a
-div.header div.menu ul a:visited,
-div.header div.menu ul a:link
+div.header div.menu ul li a,
+div.header div.menu ul li a:visited,
+div.header div.menu ul li a:link
 {
   color: white;
 }
@@ -127,9 +137,21 @@ div.content h1
   margin-top: 0px;
 }
 
-div.content div.entry
+div.content div.recent-entries div.entry
 {
-  border-bottom: 1px solid #caa05d;
+  border-bottom: 1px dotted #caa05d;
+  margin-bottom: 1em;
+}
+
+div.content div.entry h2 span.date
+{
+  font-size: smaller;
+  color: grey;
+}
+
+div.content div.entry div.section
+{
+  padding-left: 1em;
 }
 
 div.content div.entry div.footnote
@@ -138,10 +160,22 @@ div.content div.entry div.footnote
   padding-right: 10px;
 }
 
+div.content div.entry div.metadata
+{
+  text-align: right;
+  padding-right: 10px;
+  font-size: smaller;
+}
+
+div.content div.entry div.metadata span.posted-at
+{
+  color: grey;
+}
+
 div.sidebar
 {
   position: absolute;
-  top: 163px;
+  top: 157px;
   right: 0;
   width: 190px;
   border: 1px solid #caa05d;

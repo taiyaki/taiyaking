@@ -1,9 +1,14 @@
 <% content_for(:side_menus) do -%>
-  <h3>blog menu</h3>
-  <ul>
-    <li><%=  link_to_if(login?, "New", new_blog_path) %></li>
-  </ul>
+  <% if login? -%>
+    <h3>ブログメニュー</h3>
+    <ul>
+      <li><%=  link_to_if(login?, "投稿", new_blog_path) %></li>
+    </ul>
+  <% end -%>
 <% end -%>
-<h2>たいやきBlog</h2>
+
+<h1>たいやき部ログ</h1>
 <%= will_paginate @blogs %>
-<%= render :partial => 'entry', :collection => @blogs %>
+<div class="recent-entries">
+  <%= render :partial => 'entry', :collection => @blogs %>
+</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= h(@title) if @title -%></title>
+    <title><%= page_title %></title>
     <%= stylesheet_link_tag "taiyaki/taiyaki" %>
     <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"%>
     <%= auto_discovery_link_tag :rss, {:controller => 'feed', :action => 'index'} %>
@@ -46,6 +46,10 @@
   </div>
 
   <div class="sidebar">
+    <div class="about-taiyaki-bu">
+      <p><%= link_to(image_tag("taiyaki-sign.png", :alt => "たいやき部について"),
+                     permlink_blog_path("about")) %>
+    </div>
     <%= yield :side_menus %>
   </div>
 

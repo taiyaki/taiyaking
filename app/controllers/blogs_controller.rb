@@ -6,13 +6,13 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.paginate(:page => params[:page], :order => "updated_at DESC", :per_page => 5)
-    @title = "Blog - たいやきる？"
+    @title = "ブログ"
   end
 
   def new
     @blog = Blog.new
     @blog.user = logined_user
-    @title = "Blogエントリ作成 - たいやきる？"
+    @title = "エントリ作成"
   end
 
   def create
@@ -33,7 +33,7 @@ class BlogsController < ApplicationController
       render :text => "Page not found", :status => :not_found
       return
     end
-    @title = @blog.title + " - たいやきる？"
+    @title = @blog.title
   end
 
   def wordpress_link
@@ -43,7 +43,7 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
     @blog.user = logined_user
-    @title = "Blogエントリ編集 - たいやきる？"
+    @title = "エントリ編集"
  end
 
   def update
