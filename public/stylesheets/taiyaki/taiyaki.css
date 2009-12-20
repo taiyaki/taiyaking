@@ -66,16 +66,21 @@ div.header div.title span.subtitle
   font-size: smaller;
 }
 
-div.header div.menu ul
+div.header div.menu
 {
-  display: block;
-  font-weight: bold;
-  color: white;
+  position: relative;
   /* background-color: #98514B; */
   /* background-color: #946259; */
   /* background-color: #860600; */
   background: url(../../images/menu-bar.png) repeat-x;
   /* height: 31px; */
+}
+
+div.header div.menu ul
+{
+  display: inline;
+  font-weight: bold;
+  color: white;
   margin: 0px;
   padding: 0px;
   padding-left: 25px;
@@ -95,6 +100,14 @@ div.header div.menu ul li
   display: inline;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+div.header div.menu ul.login-menu
+{
+  position: absolute;
+  bottom: 0;
+  right: 200px;
+  padding: 0px;
 }
 
 div.content

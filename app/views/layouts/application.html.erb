@@ -20,10 +20,20 @@
                     "/") %>
       </div>
       <div class="menu">
-        <ul>
+        <ul class="main-menu">
           <li><%= link_to("たいやき部について", permlink_blog_path("about")) %></li>
           <li><%= link_to("入部案内", permlink_blog_path("how-to-join")) %></li>
           <li><%= link_to("ブログ", blogs_path) %></li>
+        </ul>
+        <ul class="login-menu">
+          <% unless controller_name == 'front' -%>
+            <% if login? -%>
+	      <li><%= h logined_user.nickname %>でログイン中</li>
+	      <li><%= link_to "ログアウト",  logout_path %></li>
+            <% else -%>
+              <li><%= link_to "ログイン", login_path %></li>
+            <% end -%>
+          <% end -%>
         </ul>
       </div>
     </div>
@@ -35,9 +45,6 @@
     </div>
   </div>
 
-  <div class="adminmenu">
-    <%= render :partial => "shared/loginmenu" %>
-  </div>
   <div class="sidebar">
     <%= yield :side_menus %>
   </div>
