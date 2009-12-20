@@ -30,9 +30,11 @@ end
 
 after "deploy:setup" do
   config_path = File.join(shared_path, "config")
-  paths = [config_path]
+  db_path = File.join(shared_path, "db")
+  paths = [config_path, db_path]
   run("#{try_sudo} mkdir -p #{paths.join(' ')} && " +
       "#{try_sudo} chmod g+w #{paths.join(' ')}")
+  run("#{try_sudo} sqlite3 #{db_path}/production.sqlite3 .quit")
   top.upload("config/database.yml.production",
              File.join(config_path, "database.yml"))
 end
@@ -47,4 +49,6 @@ after "deploy:finalize_update" do
   database_yml = "#{latest_release}/config/database.yml"
   run "rm -f #{database_yml}"
   run "ln -s #{shared_path}/config/database.yml #{database_yml}"
+
+  run "ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/"
 end
