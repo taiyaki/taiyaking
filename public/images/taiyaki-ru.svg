@@ -14,7 +14,8 @@
    height="40"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47 r22583">
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="taiyaki-ru.svg">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -80,14 +81,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="540"
+     inkscape:zoom="2.8"
+     inkscape:cx="118.98723"
+     inkscape:cy="-12.038562"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:guide-bbox="true"
+     inkscape:window-width="818"
+     inkscape:window-height="769"
+     inkscape:window-x="4"
+     inkscape:window-y="46"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -105,72 +111,73 @@
      id="layer1"
      transform="translate(-249.69867,-292.54283)">
     <image
-       y="306.07651"
-       x="404.64288"
-       id="image2887"
-       height="19.378269"
+       sodipodi:absref="/home/kou/work/ruby/taiyaking/public/images/taiyaki-shadow.png"
+       xlink:href="taiyaki-shadow.png"
        width="32.043354"
-       xlink:href="taiyaki-shadow.png" />
+       height="19.378269"
+       id="image2887"
+       x="404.28574"
+       y="304.2908" />
     <text
        sodipodi:linespacing="100%"
        id="text2941"
-       y="329.50504"
-       x="251.71429"
+       y="327.71933"
+       x="251.35715"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:0.49803922;stroke:none;filter:url(#filter3717);font-family:'きろ字 - B';-inkscape-font-specification:'きろ字 - B'"
        xml:space="preserve"><tspan
-         y="329.50504"
-         x="251.71429"
+         y="327.71933"
+         x="251.35715"
          id="tspan2943"
          sodipodi:role="line">たいやき</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'きろ字 - B';-inkscape-font-specification:'きろ字 - B'"
-       x="249.71429"
-       y="327.50504"
+       x="249.35715"
+       y="325.71933"
        id="text2816"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan2818"
-         x="249.71429"
-         y="327.50504">たいやき</tspan></text>
+         x="249.35715"
+         y="325.71933">たいやき</tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text3721"
-       y="327.95093"
-       x="431.22601"
+       y="328.16522"
+       x="430.86887"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:0.49803922;stroke:none;filter:url(#filter3725);font-family:'きろ字 - B';-inkscape-font-specification:'きろ字 - B'"
        xml:space="preserve"><tspan
          dx="0"
-         y="327.95093"
-         x="431.22601"
+         y="328.16522"
+         x="430.86887"
          id="tspan3723"
          sodipodi:role="line">る</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'きろ字 - B';-inkscape-font-specification:'きろ字 - B'"
-       x="429.22601"
-       y="325.95093"
+       x="428.86887"
+       y="326.16522"
        id="text2816-0"
        sodipodi:linespacing="100%"><tspan
          sodipodi:role="line"
          id="tspan2818-1"
-         x="429.22601"
-         y="325.95093"
+         x="428.86887"
+         y="326.16522"
          dx="0">る</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:'きろ字 - B';-inkscape-font-specification:'きろ字 - B'"
-       x="561.06354"
-       y="80.989288"
+       x="560.84125"
+       y="81.341499"
        id="text2816-0-0"
        sodipodi:linespacing="100%"
        transform="matrix(0.8927605,0.45053157,-0.45053157,0.8927605,0,0)"><tspan
          sodipodi:role="line"
          id="tspan2818-1-7"
-         x="561.06354"
-         y="80.989288">?</tspan></text>
+         x="560.84125"
+         y="81.341499">?</tspan></text>
     <text
-       transform="matrix(0.8927605,0.45053157,-0.45053157,0.8927605,4,-2)"
+       transform="matrix(0.8927605,0.45053157,-0.45053157,0.8927605,3.6428571,-1.7857143)"
        sodipodi:linespacing="100%"
        id="text3729"
        y="85.461395"
