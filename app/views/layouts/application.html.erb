@@ -21,24 +21,23 @@
       </div>
       <div class="menu">
         <ul>
-          <li><%= link_to("ブログ", "/blog/") %></li>
-          <li><%= link_to("入部案内", "/blog/") %></li>
+          <li><%= link_to("ブログ", blogs_path) %></li>
+          <li><%= link_to("入部案内", permlink_blog_path("how-to-join")) %></li>
         </ul>
       </div>
     </div>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<!--p style="color: green"><%= flash[:notice] %></p-->
 
     <div class="content">
 <%= yield %>
     </div>
-
   </div>
 
   <div class="adminmenu">
     <%= render :partial => "shared/loginmenu" %>
   </div>
-  <div id="sidebar" class="sub">
+  <div class="sidebar">
     <h3>menu</h3>
     <ul>
       <li><%= link_to "top", :controller => "front", :action => "index" %></li>
@@ -49,10 +48,10 @@
       <%= yield :sub_menus %>
     </ul>
   </div>
+
   <div class="footer">
     <%= render "shared/footer" %>
   </div>
   <%= render "shared/google_analytics" -%>
   </body>
 </html>
-
