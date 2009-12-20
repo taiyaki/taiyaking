@@ -37,6 +37,15 @@ after "deploy:setup" do
   run("#{try_sudo} sqlite3 #{db_path}/production.sqlite3 .quit")
   top.upload("config/database.yml.production",
              File.join(config_path, "database.yml"))
+
+  session_secret_file = "config/session_secret.txt"
+  unless File.exist?(session_secret_file)
+    require 'active_support'
+    File.open(session_secret_file, "w") do |file|
+      file.puts(ActiveSupport::SecureRandom.hex(64))
+    end
+    top.upload(session_secret_file, File.join(config_path, "session_secret.txt"))
+  end
 end
 
 # after "deploy:update_code" do
@@ -49,6 +58,7 @@ after "deploy:finalize_update" do
   database_yml = "#{latest_release}/config/database.yml"
   run "rm -f #{database_yml}"
   run "ln -s #{shared_path}/config/database.yml #{database_yml}"
+  run "ln -s #{shared_path}/config/session_secret.txt #{latest_release}/config/"
 
   run "ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/"
 end
