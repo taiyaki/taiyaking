@@ -74,6 +74,7 @@ div.header div.title span.separator
 div.header div.title span.subtitle
 {
   font-size: smaller;
+  text-shadow: 0.1em 0.1em 0.1em rgb(100, 100, 100);
 }
 
 div.header div.menu
@@ -83,7 +84,7 @@ div.header div.menu
   /* background-color: #946259; */
   /* background-color: #860600; */
   background: url(../../images/menu-bar.png) repeat-x;
-  /* height: 31px; */
+  height: 31px;
 }
 
 div.header div.menu ul
@@ -94,8 +95,8 @@ div.header div.menu ul
   margin: 0px;
   padding: 0px;
   padding-left: 25px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  position: absolute;
+  top: 3px;
 }
 
 div.header div.menu ul li a,
@@ -112,12 +113,14 @@ div.header div.menu ul li
   padding-right: 5px;
 }
 
+div.header div.menu ul.main-menu
+{
+  left: 0px;
+}
+
 div.header div.menu ul.login-menu
 {
-  position: absolute;
-  bottom: 0;
-  right: 220px;
-  padding: 0px;
+  right: 10px;
 }
 
 div.content
@@ -135,6 +138,8 @@ div.content
 div.content h1
 {
   margin-top: 0px;
+  padding-top: 5px;
+  text-shadow: 0.1em 0.1em 0.1em rgb(200, 200, 200);
 }
 
 div.content div.recent-entries div.entry
@@ -154,6 +159,15 @@ div.content div.entry div.section
 {
   padding-left: 1em;
   padding-right: 2em;
+}
+
+div.content div.entry div.section pre
+{
+  margin-left: 1em;
+  padding: 1em 0.5em;
+  border: 1px solid #caa05d;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 div.content div.entry div.footnote
@@ -177,7 +191,7 @@ div.content div.entry div.metadata span.posted-at
 div.sidebar
 {
   position: absolute;
-  top: 157px;
+  top: 164px;
   right: 0;
   width: 210px;
   border: 1px solid #caa05d;
@@ -203,3 +217,4 @@ div.footer p
 {
   margin: 0;
 }
+
