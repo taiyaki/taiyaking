@@ -20,7 +20,7 @@
   <div class="section">
     <%= BlueFeather.parse(@blog.entry) %>
     <div class="metadata">
-      <span class="posted-at"><%= @blog.updated_at.in_time_zone("Tokyo") %>に投稿</span>
+      <span class="posted-at"><%= @blog.created_at.in_time_zone("Tokyo") %>に投稿</span>
       <span class="posted-by">(<%=h @blog.user.nickname %>)</span>
       <span class="permlink"><%= link_to "この投稿へのリンク", permlink_blog_path(:slug => @blog.slug) %></span>
     </div>
