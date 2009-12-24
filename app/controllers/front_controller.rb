@@ -3,7 +3,7 @@ class FrontController < ApplicationController
   caches_page :index
 
   def index
-    blogs = Blog.find(:all, :order => "updated_at DESC", :limit => 5)
+    blogs = Blog.find(:all, :order => "created_at DESC", :limit => 5)
     @recent = recent_blog(blogs)
   end
 end
