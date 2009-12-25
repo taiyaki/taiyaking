@@ -1,0 +1,168 @@
+html,
+body
+{
+  background-color: #caa05d;
+  background-color: #eedbbc;
+  margin: 0;
+  padding: 0;
+}
+
+a
+{
+  color: #caa05d;
+}
+
+a:visited
+{
+  color: #bc9659;
+}
+
+a img
+{
+  border-width: 0;
+}
+
+div.adminmenu
+{
+  position: relative;
+  left: 0px;
+  top: 123px;
+  padding-left: 30px;
+  padding-top: 5px;
+  height: 31px;
+  background: url(menu-bar.png) repeat-x;
+  color: white;
+}
+
+div.adminmenu span.loginstatus
+{
+  float: none;
+}
+
+div.adminmenu ul
+{
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+div.adminmenu ul li
+{
+  padding-right: 10px;
+}
+
+div.adminmenu a,
+div.adminmenu a:visited,
+div.adminmenu a:link
+{
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.adminmenu a.external
+{
+  margin-right: 2px;
+  padding-right: 14px;
+}
+
+div.main
+{
+  background: url(mini-tailavi.png) no-repeat 5px 5px;
+}
+
+h1
+{
+  background: url(taiyaki-ru.png) no-repeat 150px 25px;
+  margin: 0;
+  padding-top: 65px;
+  padding-bottom: 0px;
+  padding-left: 150px;
+  height: 63px;
+  font-size: large;
+  text-shadow: 0.1em 0.1em 0.1em rgb(200, 200, 200);
+  position: relative;
+  top: -36px;
+}
+
+div.header div.menu
+{
+  position: relative;
+  background: url(menu-bar.png) repeat-x;
+  height: 31px;
+}
+
+div.body_main,
+div.body_leave
+{
+  margin-right: 220px;
+  padding-left: 29px;
+  background-color: white;
+  border: 1px solid grey;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+div.body_main
+{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+div.body_main > span,
+div.sidebar > span
+{
+  display: none !important;
+}
+
+div.body_main div.day
+{
+  border-bottom: 1px dotted #caa05d;
+  margin-bottom: 1em;
+}
+
+div.body_main div.day div.body
+{
+  padding-left: 1em;
+  padding-right: 10px;
+}
+
+div.body_leave
+{
+  margin-right: 220px;
+}
+
+div.body_leave span.files_site_total
+{
+  right: 230px;
+}
+
+div.sidebar
+{
+  position: absolute;
+  top: 164px;
+  right: 0;
+  width: 190px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #caa05d;
+  /* background: url(../../images/taiyaki-scale.png); */
+  background-color: white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+div.footer
+{
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+div.toc
+{
+  position: relative;
+  z-index: 1;
+  top: -36px;
+}
