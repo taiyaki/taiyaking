@@ -2,7 +2,7 @@
   <% if login? -%>
     <h3>ブログメニュー</h3>
     <ul>
-      <li><%= link_to_if(login?, "投稿", new_blog_path) %></li>
+      <li><%= link_to("投稿", new_blog_path) %></li>
     </ul>
   <% end -%>
 <% end -%>
