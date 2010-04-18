@@ -1,3 +1,14 @@
+<% content_for(:side_menus) do -%>
+  <% if login? -%>
+    <h3>ブログメニュー</h3>
+    <ul>
+      <li><%= link_to_unless_current("投稿", new_blog_path) %></li>
+      <li><%= link_to_unless_current("編集", edit_blog_path(entry)) %></li>
+      <li><%= link_to_unless_current("削除", destroy_blog_path(entry)) %></li>
+    </ul>
+  <% end -%>
+<% end -%>
+
 <div class="navigations">
   <span class="previous">
   <% prev_blog = Blog.find_by_id(@blog.id - 1)
