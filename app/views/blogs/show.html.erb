@@ -2,9 +2,12 @@
   <% if login? -%>
     <h3>ブログメニュー</h3>
     <ul>
-      <li><%= link_to_unless_current("投稿", new_blog_path) %></li>
-      <li><%= link_to_unless_current("編集", edit_blog_path(@blog)) %></li>
-      <li><%= link_to_unless_current("削除", blog_path(@blog), :method => "delete") %></li>
+      <li><%= link_to("投稿", new_blog_path) %></li>
+      <li><%= link_to("編集", edit_blog_path(@blog)) %></li>
+      <li><%= link_to("削除",
+                      @blog,
+                      :confirm => "本当に削除しますか？",
+                      :method => :delete) %></li>
     </ul>
   <% end -%>
 <% end -%>

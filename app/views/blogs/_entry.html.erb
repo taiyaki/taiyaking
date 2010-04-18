@@ -2,10 +2,12 @@
   <% if login? -%>
     <h3>ブログメニュー</h3>
     <ul>
-      <li><%= link_to_unless_current(h("#{entry.title}: 編集"),
-                                     edit_blog_path(entry)) %></li>
-      <li><%= link_to_unless_current(h("#{entry.title}: 削除",
-                                     blog_path(entry), :method => "delete") %></li>
+      <li><%= link_to(h("#{entry.title}: 編集"),
+                      edit_blog_path(entry)) %></li>
+      <li><%= link_to(h("#{entry.title}: 削除"),
+                      entry,
+                      :confirm => "本当に削除しますか？",
+                      :method => :delete) %></li>
     </ul>
   <% end -%>
 <% end -%>
