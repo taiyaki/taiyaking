@@ -1,4 +1,4 @@
-<% content_for(:side_menus) do -%>
+<%= content_for(:side_menus) do -%>
   <% if login? -%>
     <h3>ブログメニュー</h3>
     <ul>
@@ -16,7 +16,7 @@
   <h2><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %>
       <span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
   <div class="section">
-    <%= BlueFeather.parse(entry.entry) %>
+    <%= BlueFeather.parse(entry.entry).html_safe %>
   </div>
   <div class="metadata">
     <span class="posted-at"><%= entry.created_at.in_time_zone("Tokyo") %>に投稿</span>
