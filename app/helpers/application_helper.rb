@@ -36,4 +36,8 @@ module ApplicationHelper
       title
     end
   end
+
+  def will_paginate(records)
+    "" # FIXME
+  end
 end
