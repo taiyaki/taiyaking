@@ -28,13 +28,17 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = params[:slug] ? Blog.find_by_slug(params[:slug]) : Blog.find_by_id(params[:id])
+    slug = params[:slug]
+    if slug.nil? and params[:id].nil?
+      slug = request.path_info.split(/\//).last
+    end
+    @blog = slug ? Blog.find_by_slug(slug) : Blog.find_by_id(params[:id])
 
     unless @blog
       render :text => "Page not found", :status => :not_found
       return
     end
-    @title = @blog.title
+    @title = @blog.title.force_encoding("utf-8")
   end
 
   def wordpress_link

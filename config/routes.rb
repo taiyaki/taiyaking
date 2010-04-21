@@ -4,7 +4,7 @@ Taiyaking::Application.routes.draw do |map|
   match '/logout' => 'sessions#destroy', :as => :logout
   match '/' => 'front#index'
   resource :session
-  match 'blogs/:slug' => 'blogs#show', :as => :permlink_blog, :slug => '(?-mix:(?!new)\D[0-9A-Za-z_-]+)'
+  match 'blogs/:slug' => 'blogs#show', :as => :permlink_blog#, :constraints => {:slug => /(?-mix:(?!new)\D[0-9A-Za-z_-]+)/}
   resources :blogs
   match '/feed.:format' => 'feed#index', :as => :feed
   match '/:controller(/:action(/:id))'
