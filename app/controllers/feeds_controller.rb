@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-require 'rss'
-
 class FeedsController < ApplicationController
   # caches_page :show
 
