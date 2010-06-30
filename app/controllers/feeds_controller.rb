@@ -2,10 +2,10 @@
 
 require 'rss'
 
-class FeedController < ApplicationController
-  caches_page :index
+class FeedsController < ApplicationController
+  # caches_page :show
 
-  def index
+  def show
     blogs = Blog.find(:all, :order => "created_at DESC", :limit => 15)
     if blogs.empty?
       render :text => "Page not found", :status => :not_found

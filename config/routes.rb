@@ -6,7 +6,7 @@ Taiyaking::Application.routes.draw do |map|
   resource :session
   match 'blogs/:slug' => 'blogs#show', :as => :permlink_blog#, :constraints => {:slug => /(?-mix:(?!new)\D[0-9A-Za-z_-]+)/}
   resources :blogs
-  match '/feed.:format' => 'feed#index', :as => :feed
+  resource :feed
   match '/:controller(/:action(/:id))'
   match ':year/:month/:date/:slug' => 'blogs#wordpress_link'
 
