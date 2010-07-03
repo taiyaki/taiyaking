@@ -5,6 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     end.collect do |user|
       attributes = user.attributes
       attributes[:identity_url] = attributes.delete(:claimed_url)
+      attributes
     end
     p users
 
