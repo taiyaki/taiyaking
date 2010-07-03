@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       user.id
     end.collect do |user|
       attributes = user.attributes
-      attributes[:identity_url] = attributes.delete(:claimed_url)
+      attributes["identity_url"] = attributes.delete("claimed_url")
       attributes
     end
     p users
@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :unlock_token,         :unique => true
 
     users.each do |user|
-      User.create(user)
+      User.create!(user)
     end
   end
 
