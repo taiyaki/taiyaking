@@ -2,8 +2,8 @@
 
 tanaka:
   nickname: MyString
-  email: MyString
-  claimed_url: MyString
+  email: tanaka@example.com
+  identity_url: http://tanaka.example.com/
   fullname: MyString
   birth_date: MyString
   gender: 1
@@ -14,8 +14,8 @@ tanaka:
 
 suzuki:
   nickname: MyString
-  email: MyString
-  claimed_url: MyString
+  email: suzuki@example.com
+  identity_url: http://suzuki.example.com/
   fullname: MyString
   birth_date: MyString
   gender: 1

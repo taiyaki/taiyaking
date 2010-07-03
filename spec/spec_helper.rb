@@ -25,5 +25,10 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.include(UserControllerExampleMethods)
+  config.include(UserControllerExampleMethods,
+                 :example_group => {
+                   :describes => Proc.new do |describe|
+                     describe < ApplicationController
+                   end,
+                 })
 end

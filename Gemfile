@@ -9,5 +9,5 @@ gem 'warden-openid'
 gem 'devise', "1.1.rc2"
 gem 'bluefeather'
 # gem 'will_paginate', '>=2.2.3'
-gem 'rspec', "2.0.0.beta.14"
-gem 'rspec-rails', "2.0.0.beta.14.1"
+gem 'rspec', "2.0.0.beta.15"
+gem 'rspec-rails', "2.0.0.beta.15"
