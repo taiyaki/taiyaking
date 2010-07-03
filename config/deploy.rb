@@ -9,6 +9,7 @@ set :use_sudo, false
 set :deploy_to, "/home/#{user}/#{application}"
 set :repository_cache, "master"
 set :deploy_via, :remote_cache
+set :rake, ENV["RAKE"]
 
 role :web, "taiyaki.ru"                          # Your HTTP server, Apache/etc
 role :app, "taiyaki.ru"                          # This may be the same as your `Web` server
