@@ -7,7 +7,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       attributes["identity_url"] = attributes.delete("claimed_url")
       attributes
     end
-    p users
+    (Rails.root + "tmp" + "users.yaml").open("w") do |file|
+      file.puts(users.to_yaml)
+    end
 
     drop_table :users
     create_table(:users) do |t|
@@ -36,10 +38,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :email,                :unique => true
     add_index :users, :confirmation_token,   :unique => true
     add_index :users, :unlock_token,         :unique => true
-
-    users.each do |user|
-      User.create!(user)
-    end
   end
 
   def self.down
