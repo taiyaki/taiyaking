@@ -25,7 +25,7 @@ describe BlogsController do
         get :new
       end
       it "フロントにリダイレクトする" do
-        response.should redirect_to(:controller => 'front', :action => 'index')
+        response.should redirect_to(root_path)
       end
     end
 

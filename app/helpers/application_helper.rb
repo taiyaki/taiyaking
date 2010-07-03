@@ -16,7 +16,7 @@ module ApplicationHelper
       link = hash_for_permlink_blog_path(:slug => blog.slug)
       link[:only_path] = false
       result << {
-        :date => blog.created_at,
+        :date => blog.updated_at,
         :title => blog.title + " - Blog",
         :link => url_for(link),
         :content => BlueFeather.parse(blog.entry),
