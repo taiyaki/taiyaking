@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class FeedsController < ApplicationController
-  # caches_page :show
+  caches_page :show
 
   def show
     blogs = Blog.find(:all, :order => "created_at DESC", :limit => 15)
