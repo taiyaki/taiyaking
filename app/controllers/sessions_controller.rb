@@ -19,6 +19,14 @@ class SessionsController < ApplicationController
     session[:jumpto] = request.referer || root_path
   end
 
+  def show
+    if params[:_method] == "POST"
+      create
+    else
+      new
+    end
+  end
+
   def create
     if using_open_id?
       open_id_authentication
@@ -30,6 +38,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
+    cookies[:nick] = nil
     redirect_to default_page
   end
 
@@ -41,6 +50,8 @@ class SessionsController < ApplicationController
       :target_column => "endpoint_url"
     }
     authenticate_with_open_id(params[:openid_url], options) do |result, identity_url, registration|
+      p 2929292
+      p result
       case result.status
       when :found_in_whitelist_or_blacklist
         failed_login "Sorry, the OpenID server is blocked by the white list"
@@ -72,7 +83,9 @@ class SessionsController < ApplicationController
   end
 
   def successful_login
+    p 111
     session[:user_id] = @current_user.id
+    cookies[:nick] = @current_user.nickname
     jumpto = session[:jumpto] || default_page
     session[:jumpto] = nil
     redirect_to(jumpto)

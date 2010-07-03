@@ -6,7 +6,8 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon.png" />
     <%= stylesheet_link_tag "taiyaki/taiyaki" %>
-    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"%>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" %>
+    <%= javascript_include_tag "jquery.cookie.js" %>
     <%= auto_discovery_link_tag :rss, feed_path(:format => :rdf) %>
   </head>
   <body>
@@ -29,15 +30,24 @@
           <li><%= link_to("活動情報", "http://qwik.jp/taiyaki/") %></li>
           <li><%= link_to("ブログ", blogs_path) %></li>
         </ul>
-        <ul class="login-menu">
-          <% unless controller_name == 'front' -%>
-            <% if login? -%>
-	      <li><%= h logined_user.nickname %>でログイン中</li>
-	      <li><%= link_to "ログアウト",  logout_path %></li>
-            <% else -%>
-              <li><%= link_to "ログイン", login_path %></li>
-            <% end -%>
-          <% end -%>
+        <ul id="login-menu" class="login-menu">
+        </ul>
+          <%= javascript_tag do %>
+var login_menu = $("#login-menu");
+var login_path = <%= h(login_path).to_json.html_safe %>;
+var logout_path = <%= h(logout_path).to_json.html_safe %>;
+var nick = $.cookie("nick");
+if (nick) {
+  login_menu.append("<li></li>").text(nick + "でログイン中");
+  login_menu.append("<li></li>").children()
+            .append("<a href=\"" + logout_path + "\"></a>").children()
+            .text("ログアウト");
+} else {
+  login_menu.append("<li></li>").children()
+            .append("<a href=\"" + login_path + "\"></a>").children()
+            .text("ログイン");
+}
+          <% end %>
         </ul>
       </div>
     </div>
