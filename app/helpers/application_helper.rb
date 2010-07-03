@@ -3,12 +3,11 @@
 module ApplicationHelper
 
   def login?
-    session[:user_id]
-#    session[:user_id] = 1
+    user_signed_in?
   end
 
   def logined_user
-    User.find(session[:user_id])
+    current_user
   end
 
   def recent_blog(blogs)

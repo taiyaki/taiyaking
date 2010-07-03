@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class BlogsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :wordpress_link]
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
 
   def index

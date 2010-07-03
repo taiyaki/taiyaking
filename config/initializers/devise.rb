@@ -3,6 +3,7 @@ require 'devise/orm/active_record'
 config = Rails.application.config
 config.middleware.insert(Warden::Manager, Rack::OpenID)
 
+config.devise.encryptor = :bcrypt
 config.devise.scoped_views = true
 config.devise.warden do |manager|
   manager.default_strategies(:openid, :scope => Devise.default_scope)
