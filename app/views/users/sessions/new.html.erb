@@ -1,0 +1,14 @@
+<% if flash[:error] -%>
+ <p style="color: red"><%= flash[:error] %></p>
+<% end -%>
+
+<%= form_for(resource,
+             :as => resource_name,
+             :url => session_path(resource_name)) do |f| %>
+  <p>
+    <label for="openid_identifier" >OpenID URL:</label>
+    <%= text_field_tag :openid_identifier %>
+  </p>
+  <p><%= f.label :remember_me %> <%= f.check_box :remember_me %></p>
+  <p><%= f.submit "Login" %></p>
+<% end %>

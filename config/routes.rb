@@ -1,9 +1,9 @@
 Taiyaking::Application.routes.draw do |map|
-  match 'session' => 'sessions#create', :as => :open_id_complete, :constraints => {:method => :get}
-  match '/login' => 'sessions#new', :as => :login
-  match '/logout' => 'sessions#destroy', :as => :logout
+  devise_for(:users,
+             :controllers => {:sessions => "users/sessions"},
+             :path_names => {:sign_in => "login", :sign_out => "logout"})
+
   root :to => 'front#index'
-  resource :session
   match 'blogs/:slug' => 'blogs#show', :as => :permlink_blog#, :constraints => {:slug => /(?-mix:(?!new)\D[0-9A-Za-z_-]+)/}
   resources :blogs
   resource :feed

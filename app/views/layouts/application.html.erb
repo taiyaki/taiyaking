@@ -34,11 +34,11 @@
         </ul>
           <%= javascript_tag do %>
 var login_menu = $("#login-menu");
-var login_path = <%= h(login_path).to_json.html_safe %>;
-var logout_path = <%= h(logout_path).to_json.html_safe %>;
-var nick = $.cookie("nick");
-if (nick) {
-  login_menu.append("<li></li>").text(nick + "でログイン中");
+var login_path = <%= h(new_user_session_path).to_json.html_safe %>;
+var logout_path = <%= h(destroy_user_session_path).to_json.html_safe %>;
+var nickname = $.cookie("nickname");
+if (nickname) {
+  login_menu.append("<li></li>").text(nickname + "でログイン中");
   login_menu.append("<li></li>").children()
             .append("<a href=\"" + logout_path + "\"></a>").children()
             .text("ログアウト");

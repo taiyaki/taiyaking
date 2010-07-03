@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 class BlogsController < ApplicationController
-  before_filter :block_until_authorized,
-    :only => [:new, :edit, :create, :update, :destory]
+  before_filter :authenticate_user!, :except => [:index, :show]
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
 
   def index
