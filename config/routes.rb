@@ -4,7 +4,6 @@ Taiyaking::Application.routes.draw do |map|
              :path_names => {:sign_in => "login", :sign_out => "logout"})
 
   root :to => 'front#index'
-  match 'blogs/:slug' => 'blogs#show', :as => :permlink_blog#, :constraints => {:slug => /(?-mix:(?!new)\D[0-9A-Za-z_-]+)/}
   resources :blogs
   resource :feed
   match '/:controller(/:action(/:id))'

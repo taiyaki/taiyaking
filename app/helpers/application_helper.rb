@@ -13,7 +13,7 @@ module ApplicationHelper
   def recent_blog(blogs)
     result = []
     blogs.each do |blog|
-      link = hash_for_permlink_blog_path(:slug => blog.slug)
+      link = hash_for_blog_path(:id => blog.slug || blog.id)
       link[:only_path] = false
       result << {
         :date => blog.updated_at,

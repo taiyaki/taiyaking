@@ -13,7 +13,7 @@
 <% end -%>
 
 <div class="entry">
-  <h2><%= link_to h(entry.title), permlink_blog_path(:slug => entry.slug) %>
+  <h2><%= link_to h(entry.title), blog_path(entry) %>
       <span class="date"><%= entry.created_at.strftime("%Y-%m-%d") %></span></h2>
   <div class="section">
     <%= BlueFeather.parse(entry.entry).html_safe %>
@@ -21,6 +21,6 @@
   <div class="metadata">
     <span class="posted-at"><%= entry.created_at.in_time_zone("Tokyo") %>に投稿</span>
     <span class="posted-by">(<%=h entry.user.nickname %>)</span>
-    <span class="permlink"><%= link_to "この投稿へのリンク", permlink_blog_path(:slug => entry.slug) %></span>
+    <span class="permlink"><%= link_to "この投稿へのリンク", blog_path(entry) %></span>
   </div>
 </div>

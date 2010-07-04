@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+
 class BlogsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show, :wordpress_link]
+  before_filter :find_blog, :only => [:show, :edit, :update, :destory]
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
 
   def index
@@ -28,31 +30,21 @@ class BlogsController < ApplicationController
   end
 
   def show
-    slug = params[:slug]
-    if slug.nil? and params[:id].nil?
-      slug = request.path_info.split(/\//).last
-    end
-    @blog = slug ? Blog.find_by_slug(slug) : Blog.find_by_id(params[:id])
-
-    unless @blog
-      render :text => "Page not found", :status => :not_found
-      return
-    end
     @title = @blog.title.force_encoding("utf-8")
+    @previous_blog = Blog.find_by_id(@blog.id - 1)
+    @next_blog = Blog.find_by_id(@blog.id + 1)
   end
 
   def wordpress_link
-    redirect_to permlink_blog_path(:slug => params[:slug])
+    redirect_to blog_path(:id => params[:slug])
   end
 
   def edit
-    @blog = Blog.find(params[:id])
     @blog.user = logined_user
     @title = "エントリ編集"
  end
 
   def update
-    @blog = Blog.find(params[:id])
     @blog.attributes = params[:blog]
     @blog.user = logined_user
     if @blog.save
@@ -64,9 +56,22 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    blog = Blog.find(params[:id])
-    blog.destroy
-    flash[:notice] = "#{blog.title}を削除しました"
+    @blog.destroy
+    flash[:notice] = "#{@blog.title}を削除しました"
     redirect_to :action => :index
+  end
+
+  private
+  def find_blog
+    id = params[:id]
+    if /\A\d+\z/ =~ id
+      @blog = Blog.find(id)
+    else
+      @blog = Blog.find_by_slug(id)
+      if @blog.nil?
+        raise ActiveRecord::RecordNotFound,
+              "Couldn't find Blog with slug=#{id.inspect}"
+      end
+    end
   end
 end
