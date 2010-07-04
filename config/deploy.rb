@@ -38,6 +38,10 @@ after "deploy:setup" do
   run("#{try_sudo} sqlite3 #{db_path}/production.sqlite3 .quit")
   top.upload("config/database.yml.production",
              File.join(config_path, "database.yml"))
+  smtp_yml = "config/smtp.yml.production"
+  if File.exist?(smtp_yml)
+    top.upload(smtp_yml, File.join(config_path, "smtp.yml"))
+  end
 
   session_secret_file = "config/session_secret.txt"
   unless File.exist?(session_secret_file)
@@ -63,8 +67,11 @@ end
 
 after "deploy:finalize_update" do
   database_yml = "#{latest_release}/config/database.yml"
+  shared_smtp_yml = "#{shared_path}/config/smtp.yml"
+  smtp_yml = "#{latest_release}/config/smtp.yml"
   run "rm -f #{database_yml}"
   run "ln -s #{shared_path}/config/database.yml #{database_yml}"
+  run "[ -f #{shared_smtp_yml} ] && ln -s #{shared_smtp_yml} #{smtp_yml}"
   run "ln -s #{shared_path}/config/session_secret.txt #{latest_release}/config/"
 
   run "ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/"

@@ -11,3 +11,4 @@ gem 'bluefeather'
 gem 'will_paginate', '3.0.pre'
 gem 'rspec', "2.0.0.beta.15"
 gem 'rspec-rails', "2.0.0.beta.15"
+gem 'racknga'
