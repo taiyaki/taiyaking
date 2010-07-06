@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
     end
     self.identity_url = response.identity_url
     if nickname.blank?
-      self.nickname = claimed_url.delete("http://")[0..8]
+      self.nickname = identity_url.delete("http://")[0..8]
     end
   end
 end
