@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   }
 
   OPTIONAL_FIELDS = {
-    :email => "email"
+    :email => "email",
     :fullname => "fullname",
     :birth_date => "dob",
     :gender => "gender",
