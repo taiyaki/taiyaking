@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :rememberable, :trackable
+  # devise :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation
@@ -9,10 +10,10 @@ class User < ActiveRecord::Base
 
   REQUIRED_FIELDS = {
     :nickname => "nickname",
-    :email => "email"
   }
 
   OPTIONAL_FIELDS = {
+    :email => "email"
     :fullname => "fullname",
     :birth_date => "dob",
     :gender => "gender",
@@ -50,8 +51,6 @@ class User < ActiveRecord::Base
       end
     end
     self.identity_url = response.identity_url
-    if nickname.blank?
-      self.nickname = identity_url.delete("http://")[0..8]
-    end
+    self.nickname ||= identity_url
   end
 end
