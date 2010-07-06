@@ -18,9 +18,10 @@ Warden::OpenID.configure do |config|
       user = User.new
       user.extract_open_id_values(response)
       unless user.save
-        pp user
-        pp user.errors
-        # TODO: log it.
+        message = "failed to create user: "
+        message << "#{users.errors.full_messages.inspect}: "
+        message << user.inspect
+        Rails.logger.error(message)
         user = nil
       end
     end
