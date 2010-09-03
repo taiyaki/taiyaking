@@ -13,4 +13,4 @@ unless session_secret_file.exist?
 end
 session_secret = session_secret_file.read.strip
 
-Rails.application.config.secret_token = session_secret
+Taiyaking::Application.config.secret_token = session_secret

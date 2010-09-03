@@ -2,13 +2,16 @@
 
 source "http://rubygems.org"
 
-gem "rails", "3.0.0.beta4"
+gem "rails", "3.0.0"
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'warden-openid'
-gem 'devise', "1.1.rc2"
+gem 'devise', "1.1.2"
 gem 'bluefeather'
-gem 'will_paginate', '3.0.pre'
-gem 'rspec', "2.0.0.beta.15"
-gem 'rspec-rails', "2.0.0.beta.15"
+gem 'will_paginate', '3.0.pre2'
 gem 'racknga'
+
+group :development, :test do
+  gem 'rspec', ">= 2.0.0.beta.20"
+  gem 'rspec-rails', ">= 2.0.0.beta.20"
+end

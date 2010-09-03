@@ -10,4 +10,4 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 # require 'spec/rake/spectask'
 
-Rails::Application.load_tasks
+Taiyaking::Application.load_tasks
