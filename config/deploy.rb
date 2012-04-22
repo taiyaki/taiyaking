@@ -1,3 +1,5 @@
+load "deploy/assets"
+
 set :application, "taiyaking"
 set :repository,  "git://github.com/taiyaki/taiyaking.git"
 
