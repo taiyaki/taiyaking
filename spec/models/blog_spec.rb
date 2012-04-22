@@ -7,7 +7,6 @@ describe Blog do
 
   before(:each) do
     @valid_attributes = {
-      :user_id => 1,
       :title => "value for title",
       :entry => "value for entry",
       :slug => "value_for_slug"
@@ -15,7 +14,7 @@ describe Blog do
   end
 
   it "should create a new instance given valid attributes" do
-    Blog.create!(@valid_attributes)
+    users(:tanaka).blogs.create!(@valid_attributes)
   end
 
   it "blogエントリー作成者を参照できる" do
