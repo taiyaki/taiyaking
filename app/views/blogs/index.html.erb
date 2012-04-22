@@ -8,8 +8,8 @@
 <% end -%>
 
 <h1>たいやき部ログ</h1>
-<%= will_paginate @blogs %>
+<%= paginate @blogs %>
 <div class="recent-entries">
   <%= render :partial => 'entry', :collection => @blogs %>
 </div>
-<%= will_paginate @blogs %>
+<%= paginate @blogs %>

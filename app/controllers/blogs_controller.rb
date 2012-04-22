@@ -6,9 +6,7 @@ class BlogsController < ApplicationController
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
 
   def index
-    @blogs = Blog.paginate(:page => params[:page],
-                           :order => "created_at DESC",
-                           :per_page => 5)
+    @blogs = Blog.order("created_at DESC").page(params[:page])
     @title = "ブログ"
   end
 
