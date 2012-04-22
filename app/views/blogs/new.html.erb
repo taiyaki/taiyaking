@@ -1,9 +1,3 @@
 <h2>New entry</h2>
 
-<%= error_messages_for :blog %>
-
-
-<% form_for @blog do |f| %>
-  <%= render :partial => f %>
-  <%= submit_tag 'Create' %>
-<% end %>
+<%= render "form" %>

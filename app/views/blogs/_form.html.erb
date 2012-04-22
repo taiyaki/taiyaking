@@ -1,8 +1,27 @@
-  <%= form.label :title, "Title"%>:
-  <%= form.text_field :title %><br />
-  <%= form.label :slug, "Slug" %>:
-  <%= form.text_field :slug %><br />
-  <%= form.label :entry, "Entry" %>:<br />
-  <%= form.text_area :entry %><br />
-書式: <%= link_to "Markdown", "http://ruby.morphball.net/bluefeather/doc/format-extension.html", :target => "_blank" %><br />
+<%= form_for(@blog) do |form| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, "Title"%>:
+    <%= form.text_field :title %><br />
+    <%= form.label :slug, "Slug" %>:
+    <%= form.text_field :slug %><br />
+    <%= form.label :entry, "Entry" %>:<br />
+    <%= form.text_area :entry %><br />
+    書式: <%= link_to "Markdown", "http://ruby.morphball.net/bluefeather/doc/format-extension.html", :target => "_blank" %><br />
+  </div>
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>
 
