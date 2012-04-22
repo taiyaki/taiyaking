@@ -33,7 +33,7 @@ div.header
 
 div.header div.title
 {
-  background: url(..//mini-tailavi.png) no-repeat 5px 0px;
+  background: url(../mini-tailavi.png) no-repeat 5px 0px;
   margin: 0;
   margin-right: 220px;
   height: 113px;
@@ -84,7 +84,7 @@ div.header div.menu
   /* background-color: #98514B; */
   /* background-color: #946259; */
   /* background-color: #860600; */
-  background: url(..//menu-bar.png) repeat-x;
+  background: url(../menu-bar.png) repeat-x;
   height: 31px;
 }
 
@@ -196,7 +196,7 @@ div.sidebar
   right: 0;
   width: 210px;
   border: 1px solid #caa05d;
-  /* background: url(..//taiyaki-scale.png); */
+  /* background: url(../taiyaki-scale.png); */
   background-color: white;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
