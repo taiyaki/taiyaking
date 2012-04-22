@@ -5,6 +5,8 @@ class Blog < ActiveRecord::Base
   validates_uniqueness_of :slug
   validates_format_of :slug, :with => /\A[a-z][0-9a-z_-]+\Z/i
 
+  attr_accessible :title, :slug, :entry
+
   def to_param
     slug
   end
