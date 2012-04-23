@@ -1,2 +1,3 @@
-
-TAIYAKING_VERSION = "0.0.3"
+module Taiyaking
+  VERSION = "0.0.3"
+end
