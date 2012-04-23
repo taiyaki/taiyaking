@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" %>
     <%= javascript_include_tag "jquery.cookie.js" %>
+    <%= csrf_meta_tags %>
     <%= auto_discovery_link_tag :rss, feed_path(:format => :rdf) %>
   </head>
   <body>
