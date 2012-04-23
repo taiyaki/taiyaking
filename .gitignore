@@ -1,1 +1,5 @@
-coverage
+*.bak
+/coverage/
+/tmp/
+/public/assets/
+/config/*.production
