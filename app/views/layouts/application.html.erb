@@ -32,7 +32,7 @@
         </ul>
         <ul id="login-menu" class="login-menu">
         </ul>
-          <%= javascript_tag do %>
+        <%= javascript_tag do %>
 var login_menu = $("#login-menu");
 var login_path = <%= h(new_user_session_path).to_json.html_safe %>;
 var logout_path = <%= h(destroy_user_session_path).to_json.html_safe %>;
@@ -47,7 +47,7 @@ if (nickname) {
             .append("<a href=\"" + login_path + "\"></a>").children()
             .text("ログイン");
 }
-          <% end %>
+        <% end %>
       </div>
     </div>
 
